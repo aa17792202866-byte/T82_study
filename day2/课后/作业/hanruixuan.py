@@ -104,21 +104,21 @@ c = a + b  # c 自动变为 float (12.5)
 #     print('Bye bye!')
 
 # 2.企业发放的奖金根据利润提成,利润低于或等于10万元时,奖金可提成10%,利润高于10万元时,低于20万元时,低于10万元部分按10%提成,高于10万元部分按7.5%提成,20-40万时,高于20万部分,可提成5%,40-60万时,高于40万部分,可提成3%,60-100万时,高于60万部分,可提成1.5%,高于100万的部分,可提成1%,从键盘输入当月利润,求应发放的奖金总数?
-# Profit = float(input('请输入当月利润'))
-# if Profit<0:
-#     print('利润不能为负数')
-# elif Profit<=100000:
-#     print(f"应该发放的奖金数总数为{Profit*0.1}")
-# elif Profit<=200000:
-#     print(f"应该发放的奖金数总数为{100000 * 0.1 + (Profit-100000) * 0.075}")
-# elif Profit<=400000:
-#     print(f"应该发放的奖金数总数为{100000 * 0.1 + 100000 * 0.075 + (Profit-200000) * 0.05 }")
-# elif Profit<=600000:
-#     print(f"应该发放的奖金数总数为{100000 * 0.1 + 100000 * 0.075 + 200000 * 0.05 + (Profit-400000) * 0.03 }")
-# elif Profit<=1000000:
-#     print(f"应该发放的奖金数总数为{100000 * 0.1 + 100000 * 0.075 + 200000 * 0.05 + 200000 * 0.03 + (Profit-600000) * 0.015}")
-# else:
-#     print(f"应该发放的奖金数总数为{100000 * 0.1 + 100000 * 0.075 + 200000 * 0.05 + 200000 * 0.03 + 400000 * 0.015 +(Profit-1000000) * 0.01}")
+Profit = float(input('请输入当月利润'))
+if Profit<0:
+    print('利润不能为负数')
+elif Profit<=100000:
+    print(f"应该发放的奖金数总数为{Profit*0.1}")
+elif Profit<=200000:
+    print(f"应该发放的奖金数总数为{100000 * 0.1 + (Profit-100000) * 0.075}")
+elif Profit<=400000:
+    print(f"应该发放的奖金数总数为{100000 * 0.1 + 100000 * 0.075 + (Profit-200000) * 0.05 }")
+elif Profit<=600000:
+    print(f"应该发放的奖金数总数为{100000 * 0.1 + 100000 * 0.075 + 200000 * 0.05 + (Profit-400000) * 0.03 }")
+elif Profit<=1000000:
+    print(f"应该发放的奖金数总数为{100000 * 0.1 + 100000 * 0.075 + 200000 * 0.05 + 200000 * 0.03 + (Profit-600000) * 0.015}")
+else:
+    print(f"应该发放的奖金数总数为{100000 * 0.1 + 100000 * 0.075 + 200000 * 0.05 + 200000 * 0.03 + 400000 * 0.015 +(Profit-1000000) * 0.01}")
 # 3.输入用户的身高信息,单位为米，输入用户的体重信息,单位为kg。请根据BMI公式（体重除以身高的平方）帮用户计算他的BMI指数，并根据BMI指数给出对应的提示信息：
 # 低于18.5：过轻
 # 18.5-25：正常
@@ -159,35 +159,35 @@ else:
 # 体脂肪重量（kg）=a－b
 # 体脂率=（身体脂肪总重量÷体重）×100%。
 # 成年人的体脂率正常范围分别是女性20%～25%，男性15%～18%，若体脂率过高，就有肥胖的风险。请提示用户是否可能属于肥胖。
-# gender = input("请输入您的性别:")
-# if gender == '女':
-#     waist_cm = float(input("请输入您的腰围(单位：cm)："))
-#     weight_kg = float(input("请输入您的体重(单位：kg)"))
-#     a = waist_cm * 0.74
-#     b = weight_kg*0.082+34.89
-#     tizhifang = a-b
-#     tizhilv = (a-b)/weight_kg *100
-#     if tizhilv<=0:
-#         print("您的体脂率小于或等于0，请重新输入")
-#     elif tizhilv <= 25:
-#         print(f"您的体脂率是{tizhilv}%")
-#     else:
-#         print(f"您的体脂率是{tizhilv}%,可能属于肥胖")
-# elif gender == '男':
-#     waist_cm = float(input("请输入您的腰围(单位：cm)："))
-#     weight_kg = float(input("请输入您的体重(单位：kg)"))
-#     a = waist_cm * 0.74
-#     b = weight_kg*0.082+44.74
-#     tizhifang = a-b
-#     tizhilv = (a-b)/weight_kg * 100
-#     if tizhilv<=0:
-#         print("您的体脂率小于或等于0，请重新输入")
-#     elif tizhilv <= 18:
-#         print(f"您的体脂率是{tizhilv}%")
-#     else:
-#         print(f"您的体脂率是{tizhilv}%,可能属于肥胖")
-# else:
-#     print('请输入正确性别')
+gender = input("请输入您的性别:")
+if gender == '女':
+    waist_cm = float(input("请输入您的腰围(单位：cm)："))
+    weight_kg = float(input("请输入您的体重(单位：kg)"))
+    a = waist_cm * 0.74
+    b = weight_kg*0.082+34.89
+    tizhifang = a-b
+    tizhilv = (a-b)/weight_kg *100
+    if tizhilv<=0:
+        print("您的体脂率小于或等于0，请重新输入")
+    elif tizhilv <= 25:
+        print(f"您的体脂率是{tizhilv}%")
+    else:
+        print(f"您的体脂率是{tizhilv}%,可能属于肥胖")
+elif gender == '男':
+    waist_cm = float(input("请输入您的腰围(单位：cm)："))
+    weight_kg = float(input("请输入您的体重(单位：kg)"))
+    a = waist_cm * 0.74
+    b = weight_kg*0.082+44.74
+    tizhifang = a-b
+    tizhilv = (a-b)/weight_kg * 100
+    if tizhilv<=0:
+        print("您的体脂率小于或等于0，请重新输入")
+    elif tizhilv <= 18:
+        print(f"您的体脂率是{tizhilv}%")
+    else:
+        print(f"您的体脂率是{tizhilv}%,可能属于肥胖")
+else:
+    print('请输入正确性别')
 
 # 5.用户和计算机玩石头剪刀布的游戏，计算机随机出一个(其中：0代表石头，1代表剪刀，2代表布)，由人来猜；
 #    如果人猜的与计算机出的一致，则打印“平局”
