@@ -78,13 +78,23 @@
 # 5.  猴子吃桃问题：猴子第一天摘下若干个桃子，当即吃了一半，还不瘾，又多吃了一个 第二天早上又将剩下的桃子吃掉一半，又多吃了一个。
 #     以后每天早上都吃了前一天剩下的一半零一个。到第10天早上想再吃时，见只剩下一个桃子了。求第一天共摘了多少。
 #     程序分析：采取逆向思维的方法，从后往前推断。
-day1 = 1
-for i in range(9,0,-1):
-    day1 = (1 + day1) * 2
-    print(f"第{i}天, {day1}个桃子")
-print(f"第一天摘了{day1}个桃子")
+# day1 = 1
+# for i in range(9,0,-1):
+#     day1 = (1 + day1) * 2
+#     print(f"第{i}天, {day1}个桃子")
+# print(f"第一天摘了{day1}个桃子")
 
 # 6. 一球从100米高度自由落下，每次落地后反跳回原高度的一半，再落下，求它在 第10次落地时，共经过多少米？第10次反弹多高？
+# h = 100
+# s = 0
+# for i in range(1,11):
+#     s += h
+#     h = h/2
+#     if i == 10:
+#         print(f"第{i}次落地时，共经过{s:.2f}m，反弹{h:.4f}m高")
+#     s += h
+#     # print(f"第{i}次，落下并弹起{s}m")
+
 # 7. 打印以下图形：
 # *
 # * *
@@ -96,17 +106,57 @@ print(f"第一天摘了{day1}个桃子")
 # * *
 # *
 #
+# for i in range(1,6):
+#     print("* " * i)
+# for j in range(4,0,-1):
+#     print("* " * j)
 # 字符串题：
 # 1. str1 = 'lilei is a young people,he\'s hometown is beijing'
+# str1 = 'lilei is a young people,he\'s hometown is beijing'
 #    1) 取出人名和地名
-#    2) 取出对人物的家乡的介绍
-#    3) 判断人物的家乡是不是xian
+# s = str1.split(' ')
+# print(s[0])
+# print(s[-1])
+# #    2) 取出对人物的家乡的介绍
+# s1 = str1.split(",")
+# print(s1[1])
+# #    3) 判断人物的家乡是不是xian
+# if s[-1] == 'xian':
+#     print("家乡是xian")
+# else:
+#     print("家乡不是xian")
 #    注：人名和地名可以随意给，不一定必须是lilei、beijing；除此以外保留str1原有格式
 # 2. str2 = "today is a good day",去掉字符串所有的空格,并使用@进行连接,使其变成这个字符串'today@is@a@good@day'
+# str2 = "today is a good day"
+# str2 = (str2.split(" "))
+# print("@".join(str2))
 # 3. 对字符串"Where now? Who now? When now"调用一个方法,返回如下所述列表["Where now","Who now","When now"]
+# s3 = "Where now? Who now? When now"
+# print(s3.split("?"))
 # 4. 对列表["The","fox","jumped","over","the","fence."]进行处理,将其变成一个语法正确的字符串.
+# s4 = ["The","fox","jumped","over","the","fence."]
+# print(" ".join(s4))
 # 5. 获取字符串中汉字的个数
-#    a = "我的 English 学的不好"
+a = "我的 English 学的不好"
 #    注：单个中文字符的unicod码范围为：'\u4e00' <= 单个中文字符的unicode码 <= '\u9fef'
+# count = 0
+# for i in  a:
+#     if  '\u4e00' <= i <= '\u9fef':
+#         count += 1
+# print(f"共有{count}个汉字")
+
 # 6. 分别统计str3中的字母、数字的个数，并将所有的字母、数字打印出来
-#    str3 = "toDay is a Good day,112 $$ @!"
+str3 = "toDay is a Good day,112 $$ @!"
+zimu = 0
+shuzi = 0
+zimu1 = ""
+shuzi1 = ""
+for i in str3:
+    if i.isalpha():  # 判断是否为字母
+        zimu += 1
+        zimu1 += i + ' '
+    elif i.isdigit():  # 判断是否为数字
+        shuzi += 1
+        shuzi1 += i + ' '
+print(f"字母共有{zimu}个，分别是{zimu1}")
+print(f"数字共有{shuzi}个，分别是{shuzi1}")
