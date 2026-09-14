@@ -85,15 +85,15 @@
 # print(f"第一天摘了{day1}个桃子")
 
 # 6. 一球从100米高度自由落下，每次落地后反跳回原高度的一半，再落下，求它在 第10次落地时，共经过多少米？第10次反弹多高？
-# h = 100
-# s = 0
-# for i in range(1,11):
-#     s += h
-#     h = h/2
-#     if i == 10:
-#         print(f"第{i}次落地时，共经过{s:.2f}m，反弹{h:.4f}m高")
-#     s += h
-#     # print(f"第{i}次，落下并弹起{s}m")
+h = 100
+s = 0
+for i in range(1,11):
+    s += h
+    h = h/2
+    if i == 10:
+        print(f"第{i}次落地时，共经过{s:.2f}m，反弹{h:.4f}m高")
+    s += h
+    print(f"第{i}次，落下并弹起{s}m")
 
 # 7. 打印以下图形：
 # *
@@ -146,17 +146,17 @@ a = "我的 English 学的不好"
 # print(f"共有{count}个汉字")
 
 # 6. 分别统计str3中的字母、数字的个数，并将所有的字母、数字打印出来
-str3 = "toDay is a Good day,112 $$ @!"
-zimu = 0
-shuzi = 0
-zimu1 = ""
-shuzi1 = ""
-for i in str3:
-    if i.isalpha():  # 判断是否为字母
-        zimu += 1
-        zimu1 += i + ' '
-    elif i.isdigit():  # 判断是否为数字
-        shuzi += 1
-        shuzi1 += i + ' '
-print(f"字母共有{zimu}个，分别是{zimu1}")
-print(f"数字共有{shuzi}个，分别是{shuzi1}")
+# str3 = "toDay is a Good day,112 $$ @!"
+# zimu = 0
+# shuzi = 0
+# zimu1 = ""
+# shuzi1 = ""
+# for i in str3:
+#     if i.isalpha():  # 判断是否为字母
+#         zimu += 1
+#         zimu1 += i + ' '
+#     elif i.isdigit():  # 判断是否为数字
+#         shuzi += 1
+#         shuzi1 += i + ' '
+# print(f"字母共有{zimu}个，分别是{zimu1}")
+# print(f"数字共有{shuzi}个，分别是{shuzi1}")
