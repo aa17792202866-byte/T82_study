@@ -189,6 +189,8 @@
 #     if list7[i] < 33:
 #         list7.pop(i)
 # print(list7)
+
+
 # 8. 用户输入某年某月某日，利用列表判断这一天是这一年的第几天？
 #    思路: 以2021年3月5日为例,需要考虑
 #    1).2021年是否为闰年,如果为闰年,那么2月是29天,比平年多1天
@@ -212,18 +214,18 @@
 
 # 9. 用户任意输入一个字符串，输出第 m 个只出现过 n 次的字符
 #    比如：在字符串 gbgkkdehh 中，找出第 2 个只出现 1 次的字符，输出结果：d
-# list9 = "gbgkkdehh"
-# n = 5 #出现次数，可修改
-# m = 2 #第几个，可修改
-# result = []
-# for num in list9:
-#     # 判断该数字在列表中出现了 n 次，且尚未加入结果列表
-#     if list9.count(num) == n and num not in result:
-#         result.append(num)
-# if len(result) >= m:
-#     print(result[m-1])
-# else:
-#     print(f"不存在第 {m} 个出现过 {n} 次的字符")
+list9 = "gbgkkdehh"
+n = 2 #出现次数，可修改
+m = 2 #第几个，可修改
+result = []
+for num in list9:
+    # 判断该数字在列表中出现了 n 次，且尚未加入结果列表
+    if list9.count(num) == n and num not in result:
+        result.append(num)
+if len(result) >= m:
+    print(result[m-1])
+else:
+    print(f"不存在第 {m} 个出现过 {n} 次的字符")
 # 不要了：print(result[m-1])  #打印m个出现过n次的字符,索引值得是m-1才行(没有引入判断，如果m超出范围会报错)
 # 方法一：列表表达式
 # # # 1. 用户输入与参数设置
