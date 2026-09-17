@@ -103,6 +103,7 @@ def decrypt(num5):
         else:
             list5[i] = 0
     return int("".join(map(str, list5)))
+
 # a = input("请输入四位整数")
 # b=encryption(a)
 # print(f"{a}加密后的结果是{b}")
