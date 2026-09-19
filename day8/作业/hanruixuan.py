@@ -22,7 +22,7 @@ def huiwenshu(num1):
 #         else:
 #             print(f"{num1}不是回文数")
 #             break
-
+#
 
 
 
@@ -89,7 +89,7 @@ def encryption(num5):
         list5[i] = int(list5[i]) % 10
     list5[0],list5[3] = list5[3],list5[0]
     list5[1], list5[2] = list5[2], list5[1]
-    return int("".join(map(str, list5)))
+    return "".join(map(str, list5))
 
 def decrypt(num5):
     list5 = list(str(num5))
@@ -97,42 +97,42 @@ def decrypt(num5):
     list5[1], list5[2] = list5[2], list5[1]
     for i in range(len(list5)):
         if int(list5[i]) < 5:
-            list5[i] = int(list5[i]) + 5
+            list5[i] = str(int(list5[i]) + 5)
         elif int(list5[i]) > 5:
-            list5[i] = (int(list5[i]) + 5) % 10
+            list5[i] = str((int(list5[i]) + 5) % 10)
         else:
-            list5[i] = 0
-    return int("".join(map(str, list5)))
+            list5[i] = str(0)
+    return "".join(map(str, list5))
 
-# a = input("请输入四位整数")
-# b=encryption(a)
-# print(f"{a}加密后的结果是{b}")
-# c = decrypt(str(b))
-# print(f"{b}解密后的结果是{c}")
-# print(f"{a}加密后的结果是{encryption(a)},解密后的结果是{decrypt(encryption(a))}")
+a = input("请输入四位整数")
+b=encryption(a)
+print(f"{a}加密后的结果是{b}")
+c = decrypt(str(b))
+print(f"{b}解密后的结果是{c}")
+print(f"{a}加密后的结果是{encryption(a)},解密后的结果是{decrypt(encryption(a))}")
 
 # 6. 函数实现：某系统做限时促销活动
 #                     1）要求设计一个程序生成200个邀请码，邀请码由6位字符组成，要求是一个随机字母开头,其它五位为随机数字
 #                     2）随机产生3个一等奖，5个二等奖，10个三等奖（要求：每个邀请码只能有一次抽奖的机会）
 
-# import random
-# def choujiang():
-#     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j','k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't','u', 'v', 'w', 'x', 'y', 'z','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T','U', 'V', 'W', 'X', 'Y', 'Z']
-#     def create_code(): # 生成一个邀请码
-#         letter = random.choice(letters)     # 随机取一个字母
-#         nums = ""      # 生成后面5位数字
-#         for i in range(5):
-#             nums += str(random.randint(0, 9))
-#         return letter + nums
-#     codes = [] # 生成200个不重复的邀请码
-#     while len(codes) < 200:
-#         code = create_code()
-#         if code not in codes:
-#             codes.append(code)
-#     winners = random.sample(codes, 18) # 抽奖
-#     return winners[0:3],winners[3:8],winners[8:18]
-# a,b,c = choujiang() #返回了三个值，所以要解包
-# print(f"一等奖：{a}\n二等奖：{b}\n三等奖：{c}")
+import random
+def choujiang(a,b,c):
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j','k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't','u', 'v', 'w', 'x', 'y', 'z','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T','U', 'V', 'W', 'X', 'Y', 'Z']
+    def create_code(): # 生成一个邀请码
+        letter = random.choice(letters)     # 随机取一个字母
+        nums = ""      # 生成后面5位数字
+        for i in range(5):
+            nums += str(random.randint(0, 9))
+        return letter + nums
+    codes = [] # 生成200个不重复的邀请码
+    while len(codes) < 200:
+        code = create_code()
+        if code not in codes:
+            codes.append(code)
+    winners = random.sample(codes, 18) # 抽奖
+    return winners[0:a],winners[a:a+b],winners[a+b:a+b+c]
+a,b,c = choujiang(3,5,10) #返回了三个值，所以要解包
+print(f"一等奖：{a}\n二等奖：{b}\n三等奖：{c}")
 
 
 """
@@ -216,25 +216,25 @@ def get_day_of_year(year, month, day):
 #     break
 # 注：第8题可以不用函数实现
 # 8. 使用sample()实现：将8名老师随机分配到3个办公室，要求：每个办公室不超过3个人
-import random
-a = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8"]
-dict1 = {}
-office_num = 3
-offices = [1, 2, 3]
-if len(a) <= office_num * 3:
-    for i in range(len(a)):
-        while True:
-            # 用 sample 随机抽取一个办公室编号
-            office = random.sample(offices, 1)[0]
-            # 如果这个办公室还没创建
-            if office not in dict1:
-                dict1[office] = []
-            # 如果办公室人数少于3人，就把老师放进去
-            if len(dict1[office]) < 3:
-                dict1[office].append(a[i])
-                break
-    dict1 = dict(sorted(dict1.items()))
-    for j in range(len(dict1)):
-        print(f"第{j + 1}个办公室，共有{len(dict1[j + 1])}个老师，分别是{dict1[j + 1]}")
-else:
-    print("办公室数量不足以容纳所有老师")
+# import random
+# a = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8"]
+# dict1 = {}
+# office_num = 3
+# offices = [1, 2, 3]
+# if len(a) <= office_num * 3:
+#     for i in range(len(a)):
+#         while True:
+#             # 用 sample 随机抽取一个办公室编号
+#             office = random.sample(offices, 1)[0]
+#             # 如果这个办公室还没创建
+#             if office not in dict1:
+#                 dict1[office] = []
+#             # 如果办公室人数少于3人，就把老师放进去
+#             if len(dict1[office]) < 3:
+#                 dict1[office].append(a[i])
+#                 break
+#     dict1 = dict(sorted(dict1.items()))
+#     for j in range(len(dict1)):
+#         print(f"第{j + 1}个办公室，共有{len(dict1[j + 1])}个老师，分别是{dict1[j + 1]}")
+# else:
+#     print("办公室数量不足以容纳所有老师")
